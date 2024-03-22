@@ -8,7 +8,7 @@ import { Canvas } from "@react-three/fiber";
 import { View } from "@react-three/drei";
 import { models, sizes } from "../constants";
 import ModelView from "./ModelView";
-import { animateWithGsapTimeline } from "../utils/anims";
+import { animateWithGsap, animateWithGsapTimeline } from "../utils/anims";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -51,11 +51,12 @@ const Model = () => {
   }, [size]);
 
   useGSAP(() => {
-    gsap.to("#heading", {
+    animateWithGsap("#heading", { y: 0, opacity: 1 });
+    /*  gsap.to("#heading", {
       scrollTrigger: "#heading",
       y: 0,
       opacity: 1,
-    });
+    }); */
   }, []);
 
   return (

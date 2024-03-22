@@ -18,6 +18,7 @@ function IPhone(props) {
         material[0] !== "xNrofRCqOXXHVZt"
       ) {
         material[1].color = new THREE.Color(props.item.color[0]);
+        material[1].blendEquation = 100;
       }
       material[1].needsUpdate = true;
     });
